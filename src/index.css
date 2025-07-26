@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Islamic Spiritual Travel Design System - Al Majd Tour & Travels */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - Deep Royal Blue & Sand Tones */
+    --background: 35 25% 97%;
+    --foreground: 220 75% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 75% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 75% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep Royal Blue - Primary Islamic Color */
+    --primary: 220 75% 25%;
+    --primary-foreground: 35 25% 97%;
+    --primary-light: 220 60% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Light Sand - Desert Inspiration */
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 220 75% 25%;
+    
+    /* Warm Sand Accent */
+    --accent: 35 35% 88%;
+    --accent-foreground: 220 75% 25%;
+    
+    /* Spiritual Gold for highlights */
+    --gold: 45 85% 65%;
+    --gold-foreground: 220 75% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 35 15% 95%;
+    --muted-foreground: 220 25% 45%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 35 25% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 90%;
+    --input: 35 20% 95%;
+    --ring: 220 75% 25%;
 
-    --radius: 0.5rem;
+    /* Enhanced radius for Islamic architectural curves */
+    --radius: 0.75rem;
+    
+    /* Gradients for spiritual ambiance */
+    --gradient-primary: linear-gradient(135deg, hsl(220, 75%, 25%), hsl(220, 60%, 35%));
+    --gradient-sand: linear-gradient(180deg, hsl(35, 25%, 97%), hsl(35, 35%, 88%));
+    --gradient-spiritual: linear-gradient(45deg, hsl(220, 75%, 25%), hsl(220, 60%, 35%), hsl(45, 85%, 65%));
+    
+    /* Shadows with Islamic blue tint */
+    --shadow-elegant: 0 10px 30px -10px hsl(220, 75%, 25%, 0.15);
+    --shadow-card: 0 4px 20px -4px hsl(220, 75%, 25%, 0.1);
+    --shadow-glow: 0 0 40px hsl(45, 85%, 65%, 0.3);
+    
+    /* Smooth transitions for spiritual serenity */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +123,17 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+  
+  /* Enhanced Urdu/Arabic text rendering */
+  .font-urdu, .font-arabic {
+    font-feature-settings: "liga" 1, "calt" 1, "kern" 1;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
   }
 }
