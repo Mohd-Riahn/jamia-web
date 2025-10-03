@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "سر ورق", href: "/" },
+    { label: "سر ورق", href: "/#" },
      { label: "شعبہ جات", href: "/departments" },
          { label: "ہماری انتظامیہ ", href: "/administration" },
     { label: "تعاون ", href: "/about" },
