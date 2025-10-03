@@ -3,7 +3,7 @@ import React from "react";
 import { Settings, GraduationCap, Globe, ChevronRight, FileText, Users, Home, CookingPot, BookOpen, School, Library } from "lucide-react";
 
 
-const SectionTitle = () => (
+const SectionTitle = ({ title, subtitle }) => (
   <div className="mb-8 text-center">
     <h2 className="text-3xl font-bold font-urdu text-primary mb-2">{title}</h2>
     {subtitle && <p className="text-muted-foreground font-urdu text-lg">{subtitle}</p>}
@@ -13,7 +13,7 @@ const SectionTitle = () => (
   </div>
 );
 
-const ContentCard = () => (
+const ContentCard = ({ icon: Icon, title, content }) => (
   <div className="bg-primary/5 rounded-lg p-6 hover:shadow-xl transition-all duration-300 border border-primary/10">
     <div className="flex items-center mb-4">
       <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">

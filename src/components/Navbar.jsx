@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+
 import { Menu, X } from "lucide-react"; // for icons
 
 const Navbar = () => {
@@ -10,7 +11,7 @@ const Navbar = () => {
      { label: "شعبہ جات", href: "/departments" },
          { label: "ہماری انتظامیہ ", href: "/administration" },
     { label: "تعاون ", href: "/about" },
-    { label: "رابطہ", href: "#contact-section" },
+    { label: "رابطہ", href: "/#contact-section" },
   ];
 
   return (
@@ -24,18 +25,19 @@ const Navbar = () => {
             </span>
           </a>
 
-          {/* Desktop Navigation (center) */}
-          <div className="hidden md:flex flex-1 justify-center mr-24 items-center space-x-12 rtl:space-x-reverse">
-            {navItems.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className="text-primary-foreground font-urdu hover:text-gold transition-colors text-lg"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
+         {/* Desktop Navigation */}
+<div className="hidden md:flex flex-1 justify-center mr-24 items-center space-x-12 rtl:space-x-reverse">
+  {navItems.map((item, index) => (
+    <HashLink
+      key={index}
+      smooth
+      to={item.href}
+      className="text-primary-foreground font-urdu hover:text-gold transition-colors text-lg"
+    >
+      {item.label}
+    </HashLink>
+  ))}
+</div>
 
           {/* Desktop Logo (right side) */}
           <div className="hidden md:flex ml-auto">
@@ -59,23 +61,23 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-primary/95 backdrop-blur-sm h-[700px]  shadow-lg">
-          <div className="flex flex-col items-center space-y-4 py-6 ">
-            {navItems.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className="text-primary-foreground font-urdu hover:text-gold transition-colors text-lg"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
-            
-          </div>
-        </div>
-      )}
+     {isOpen && (
+  <div className="md:hidden bg-primary/95 backdrop-blur-sm h-[700px] shadow-lg">
+    <div className="flex flex-col items-center space-y-4 py-6">
+      {navItems.map((item, index) => (
+        <HashLink
+          key={index}
+          smooth
+          to={item.href}
+          className="text-primary-foreground font-urdu hover:text-gold transition-colors text-lg"
+          onClick={() => setIsOpen(false)}
+        >
+          {item.label}
+        </HashLink>
+      ))}
+    </div>
+  </div>
+)}
     </nav>
   );
 };
